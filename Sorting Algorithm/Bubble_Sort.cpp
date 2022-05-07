@@ -4,7 +4,7 @@ using namespace std;
 
 void bubble_Sort(int* a, int size) {
 
-    int i=0, j = 0;
+    int j = 0;
     while(size) {
         if(a[j]>a[j+1]) {
             int temp = a[j];
@@ -14,7 +14,6 @@ void bubble_Sort(int* a, int size) {
         j++;
         if(j==size) {
             size--;
-            ++i;
             j = 0;
         }
     }
