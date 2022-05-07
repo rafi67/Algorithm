@@ -40,6 +40,8 @@ void merge(int a[], int leftPos, int rightPos, int rightEnd) {
         k++;
     }
 
+    delete M, L;
+
 }
 
 void printArray(int arr[], int size) {
