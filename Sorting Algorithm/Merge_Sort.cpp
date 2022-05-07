@@ -4,19 +4,19 @@ using namespace std;
 
 void merge(int a[], int leftPos, int rightPos, int rightEnd) {
 
-    int n1 = rightPos - leftPos + 1;
-    int n2 = rightEnd - rightPos;
+    int n1 = rightPos - leftPos + 1; // calculating first array size 
+    int n2 = rightEnd - rightPos;   // second array size
 
-    auto *L = new int[n1], *M = new int[n2];
+    auto *L = new int[n1], *M = new int[n2]; // dinamically declared 
 
-    for(int i=0; i<n1; i++) L[i] = a[leftPos+i];
+    for(int i=0; i<n1; i++) L[i] = a[leftPos+i]; // assigning first half of the array
 
-    for(int i=0; i<n2; i++) M[i] = a[rightPos+1+i];
+    for(int i=0; i<n2; i++) M[i] = a[rightPos+1+i]; // second half of the array
 
-    auto i = 0, j = 0;
-    int k = leftPos;
+    auto i = 0, j = 0; // index of sub array
+    int k = leftPos; // index of array
 
-    while(i<n1 && j<n2) {
+    while(i<n1 && j<n2) {  // assigning sub array to array
         if(L[i]<=M[j]) {
             a[k] = L[i];
             i++;
@@ -28,7 +28,10 @@ void merge(int a[], int leftPos, int rightPos, int rightEnd) {
         k++;
     }
 
-    while(i<n1) {
+    // one of the sub array have no element then
+    //directly assigning data from sub array to array
+
+    while(i<n1) { 
         a[k] = L[i];
         i++;
         k++;
@@ -66,7 +69,7 @@ int main() {
 
     int a[] = {3, 5, 6, 7, 8, 2, 1, 4};
 
-    int size = sizeof(a) / sizeof(a[0]);
+    int size = sizeof(a) / sizeof(a[0]); // getting the size of array
 
     cout << "Before sorted:\n";
 
